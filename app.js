@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
+const apiRoutes = require('./routes/api');
 const myWeb = require('./components/myweb');
 
 const app = express();
@@ -10,6 +11,9 @@ myWeb.init();
 //Middleware para parseo de JSon en formularios
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+//Uso de routes para la api
+app.use('/api', apiRoutes);
 
 //Configuración de handlebars
 app.set('view engine', 'hbs');
