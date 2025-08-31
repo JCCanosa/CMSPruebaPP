@@ -1,0 +1,18 @@
+{{!-- Página que se mostrará cuando la ruta no exista o haya algun error --}}
+<div class="container mt-5">
+    <div class="row">
+        <div class=" col-lg-8 mx-auto text-center ">
+            <div class="alert alert-danger" role="alert">
+                <h1 class="display-1">404</h1>
+                <h2>Página no encontrada</h2>
+                <p class="lead">La página "<strong>/{{ruta}}</strong>" no existe</p>
+            </div>
+
+            {{!-- Enlaces navegación --}}
+            <div class=" mt-4 text-center ">
+                <a href="/" class="btn btn-outline-primary">Ir a Inicio</a>
+                <a href="/admin" class="btn btn-outline-secondary">Ir a Admin</a>
+            </div>
+        </div>
+    </div>
+</div>

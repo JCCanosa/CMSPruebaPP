@@ -1,0 +1,25 @@
+{{!-- Plantilla para la creación de las páginas dinamicas --}}
+<div class="container mt-5">
+    <div class="row">
+        <div class=" col-lg-10 mx-auto ">
+
+            {{!-- Aviso de página dinamica --}}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Página dinámica:</strong>Creada desde el panel de Admin
+                <button type="button" class="btn-close" data-bs-dissmis="alert"></button>
+            </div>
+
+            {{!-- Contenido de la página --}}
+            <div class="dynamic-content bg-light p-4 rounded">
+                {{{contenido}}}
+            </div>
+
+            {{!-- Enlaces navegación --}}
+            <div class=" mt-4 text-center ">
+                <a href="/" class="btn btn-outline-primary">Ir a Inicio</a>
+                <a href="/admin" class="btn btn-outline-secondary">Ir a Admin</a>
+            </div>
+
+        </div>
+    </div>
+</div>
