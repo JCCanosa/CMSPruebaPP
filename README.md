@@ -2,8 +2,7 @@
 
 #### Clonar reposirotio
 ~~~
-git clone url
-cd proyecto
+git clone https://github.com/JCCanosa/CMSPruebaPP
 ~~~
 
 #### Instalar dependencias
