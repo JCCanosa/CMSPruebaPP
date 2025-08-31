@@ -11,6 +11,7 @@ myWeb.init();
 //Middleware para parseo de JSon en formularios
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Uso de routes para la api
 app.use('/api', apiRoutes);

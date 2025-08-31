@@ -11,7 +11,7 @@ const MyWebsClient = {
         const url = this.config.baseUrl + endpoint;
         const defaultOptions = {
             headers: {
-                'Conten-Type': 'application/json'
+                'Content-Type': 'application/json'
             }
         };
 

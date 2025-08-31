@@ -3,6 +3,10 @@
     {
       "ruta": "nosotros",
       "file": "web/nosotros.html"
+    },
+    {
+      "ruta": "servicios",
+      "file": "web/servicios.html"
     }
   ]
 }

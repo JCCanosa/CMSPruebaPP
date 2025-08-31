@@ -6,6 +6,52 @@
                 <h2>Bienvenido al gestor de rutas</h2>
                 <p>Esta es la página principal</p>
             </div>
+
+            <div class="mt-4">
+                <h4>Páginas disponibles:</h4>
+                <div id="pages-list"></div>
+            </div>
+
         </div>
     </div>
 </div>
+
+<script src="/js/myweb_client.js"></script>
+
+{{!-- Cargar lista de páginas en la página principal --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const pagesContanier = document.getElementById('pages-list');
+
+        MyWebsClient.list()
+            .then(response => {
+                const pages = response.data || [];
+                if(pages.length === 0){
+                    pagesContanier.innerHTML = '<p class="text-muted"><em>No hay páginas</em></p>';
+                    return;
+                }
+
+                //Crear lista de páginas
+                const ul = document.createElement('ul');
+                ul.classList.add('list-group');
+
+                pages.forEach(page => {
+                    const li = document.createElement('li');
+                    li.classList.add('list-group-item');
+
+                    const a = document.createElement('a');
+                    a.href = '/' + page.ruta;
+                    a.textContent = '/' + page.ruta;
+
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+
+                pagesContanier.innerHTML = '';
+                pagesContanier.appendChild(ul);
+            })
+            .catch(error => {
+                pagesContanier.innerHTML = '<p class="text-danger">Error al cargar páginas</p>'
+            });
+    });
+</script>

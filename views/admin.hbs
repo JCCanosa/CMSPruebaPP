@@ -5,6 +5,9 @@
             <h1 class="mb-4">Panel de Administración</h1>
 
             {{!-- Alertas --}}
+            <div id="alert-container"></div>
+
+            {{!-- Alerta bienvenida --}}
             <div class="alert alert-info">
                 <h4 class="alert-heading">Bienvenido al panel de administración</h4>
             </div>
@@ -18,6 +21,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Páginas Creadas</h3>
+                    <button id="btn-refresh" class="btn btn-sm btn-info">Actualizar</button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -39,6 +43,9 @@
                                         <button class="btn btn-sm btn-warning" disabled>Editar</button>
                                     </td>
                                 </tr>
+
+                            <tbody id="pageslist"></tbody>
+
                             </tbody>
                         </table>
                     </div>
@@ -53,7 +60,7 @@
                     <h3>Crear nueva página</h3>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form id="page-form">
                         <div class="mb-3">
                             <label for="ruta" class=" form-label ">Ruta: </label>
                             <input type="text" class="form-control" id="ruta" placeholder="ej: nosotros">
@@ -73,3 +80,34 @@
         </div>
     </div>
 </div>
+
+{{!-- Modal para editar las páginas --}}
+{{!-- Boton oculto para abrir el modal --}}
+<button type="button" id="editModalBtn" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#editModal"></button>
+
+{{!-- Modal bootstrap --}}
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class=" modal-dialog modal-lg ">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Página</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <textarea id="editContenido" class="form-control" rows="12"></textarea>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="saveEditBtn">Guardar Cambios</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{{!-- Scripts --}}
+<script src="/js/myweb_client.js"></script>
+<script src="/js/admin.js"></script>
