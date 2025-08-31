@@ -1,0 +1,16 @@
+{{!-- Navbar --}}
+<nav class="navbar navbar-expand-lg navbar-dark {{#if isAdmin}}bg-primary{{else}}bg-dark{{/if}}">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            {{#if isAdmin}}
+                Panel de Administración
+            {{else}}
+                CMS Web
+            {{/if}}
+        </a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link {{#unless isAdmin}}active{{/unless}}" href="/">Inicio</a>
+            <a class="nav-link {{#if isAdmin}}active{{/if}}" href="/admin">Admin</a>
+        </div>
+    </div>
+</nav>

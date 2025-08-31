@@ -1,0 +1,73 @@
+{{!-- Contenido admin --}}
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Panel de Administración</h1>
+
+            {{!-- Alertas --}}
+            <div class="alert alert-info">
+                <h4 class="alert-heading">Bienvenido al panel de administración</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        {{!-- Tabla de paginas creadas --}}
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Páginas Creadas</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Ruta</th>
+                                    <th>Archivo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>/ (main)</strong></td>
+                                    <td><em>Por defecto</em></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Formulario para nuevas paginas --}}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Crear nueva página</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="ruta" class=" form-label ">Ruta: </label>
+                            <input type="text" class="form-control" id="ruta" placeholder="ej: nosotros">
+                            <small class="text-muted"> Sin barras, ej: "nosotros" crea /nosotros </small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contenido" class=" form-label ">Contenido HTML: </label>
+                            <textarea class="form-control" id="contenido" rows="8"
+                                placeholder="<h1>Página nueva</h1><p>Contenido ...</p>"></textarea>
+                        </div>
+
+                        <button type="submit" class=" btn btn-success w-100 ">Crear nueva página</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
