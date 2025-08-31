@@ -5,8 +5,8 @@
       "file": "web/nosotros.html"
     },
     {
-      "ruta": "servicios",
-      "file": "web/servicios.html"
+      "ruta": "empresa",
+      "file": "web/empresa.html"
     }
   ]
 }
